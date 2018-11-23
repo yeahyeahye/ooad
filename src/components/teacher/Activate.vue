@@ -58,7 +58,7 @@
   .head{
     height: 50px;
     width:100%;
-    background-color: #f5f5f5;
+    background-color: #CCCCCC;
   }
   .title{
     display: block;
@@ -89,7 +89,7 @@
     height:36px;
     width:50%;
     border: none;
-    background-color: rgb(154, 223, 106);
+    background-color: #99CCCC;
     margin: auto;
   }
   @media (max-width: 640px) {

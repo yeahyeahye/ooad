@@ -58,7 +58,7 @@
   .head{
     height: 50px;
     width:100%;
-    background-color: rgb(154, 223, 106);
+    background-color: #CCCCCC;
   }
   .title{
     display: block;
@@ -79,6 +79,6 @@
     border-radius: 10px;
     text-align: center;
     margin-top: 10px;
-    background-color: lavenderblush;
+    background-color: #99CCCC;
   }
 </style>
