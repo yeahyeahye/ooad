@@ -5,6 +5,7 @@ import FindPassword from "../components/teacher/FindPassword";
 import HomePage from "../components/teacher/HomePage";
 import SetPassword from "../components/teacher/SetPassword";
 import Login from "../components/Login";
+import AccountManage from "../components/teacher/AccountManage";
 
 Vue.use(Router);
 
@@ -28,8 +29,12 @@ export default new Router({
       component:HomePage
     },
     {
-      path:'teacher/SetPassword',
+      path:'/teacher/SetPassword',
       component:SetPassword
+    },
+    {
+      path:'/teacher/AccountManage',
+      component:AccountManage
     }
   ]
 })

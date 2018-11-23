@@ -3,11 +3,10 @@
       <div id="head" class="head">
         <div class="title">我
           <el-dropdown class="plus" trigger="click">
-            <i class="el-icon-plus icon1"></i>
+            <i class="el-icon-more icon1"></i>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item><i class="el-icon-message"></i>&nbsp;&nbsp;待  办</el-dropdown-item>
               <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
-              <el-dropdown-item><i class="el-icon-setting"></i>&nbsp;&nbsp;设  置</el-dropdown-item>
+              <el-dropdown-item><div @click="ReturnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退  出</div></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -17,7 +16,7 @@
         <el-row :gutter="12">
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <i class="el-icon-menu"></i>
+              <i class="el-icon-menu menu"></i>
               我的课程
             </el-card>
           </el-col>
@@ -31,14 +30,19 @@
         <el-row :gutter="12">
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <i class="el-icon-menu"></i>
-              我的课程
+              <el-badge is-dot class="item">
+              <i class="el-icon-date"></i>
+              </el-badge>
+              我的待办
             </el-card>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="12" >
             <el-card shadow="hover" class="card">
-              <i class="el-icon-service"></i>
-              讨论课
+              <div @click="SetAccount">
+                <i class="el-icon-setting"></i>
+                账户设置
+              </div>
+
             </el-card>
           </el-col>
         </el-row>
@@ -50,7 +54,15 @@
 
 <script>
     export default {
-        name: "HomePage"
+        name: "HomePage",
+      methods:{
+          SetAccount(){
+            this.$router.push({path:'/teacher/AccountManage'});
+          },
+        ReturnLogin(){
+            this.$router.push({path:'/'});
+        }
+      }
     }
 </script>
 
@@ -78,7 +90,13 @@
     height:100px;
     border-radius: 10px;
     text-align: center;
+
     margin-top: 10px;
     background-color: #99CCCC;
+  }
+  .item {
+    margin-top: 5px;
+    margin-right: 6px;
+
   }
 </style>

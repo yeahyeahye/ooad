@@ -52,7 +52,7 @@
     methods: {
       Login() {
 
-        this.$router.push({path: '/teacher/Activate'});
+        this.$router.push({path: '/teacher/HomePage'});
 
       },
       FindPassword() {
