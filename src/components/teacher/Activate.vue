@@ -84,7 +84,7 @@
   }
   .td0 a{
     text-decoration: none;
-    color:#99CCCC;
+    color: #99ccf4;
   }
   .btn{
     height:36px;
