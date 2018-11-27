@@ -3,10 +3,12 @@
       <div id="head" class="head">
         <div class="title">我
           <el-dropdown class="plus" trigger="click">
-            <i class="el-icon-more icon1"></i>
+            <i class="el-icon-plus icon1"></i>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
-              <el-dropdown-item><div @click="ReturnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退  出</div></el-dropdown-item>
+              <el-dropdown-item>
+                <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -16,8 +18,10 @@
         <el-row :gutter="12">
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <i class="el-icon-menu menu"></i>
-              我的课程
+              <div @click="gotoCourseManage">
+                <i class="el-icon-menu menu"></i>
+                我的课程
+              </div>
             </el-card>
           </el-col>
           <el-col :span="12">
@@ -59,8 +63,11 @@
           SetAccount(){
             this.$router.push({path:'/teacher/AccountManage'});
           },
-        ReturnLogin(){
+        returnLogin() {
             this.$router.push({path:'/'});
+        },
+        gotoCourseManage() {
+          this.$router.push({path: '/teacher/CourseManage'});
         }
       }
     }
@@ -70,7 +77,7 @@
   .head{
     height: 50px;
     width:100%;
-    background-color: #CCCCCC;
+    background-color: #CCFF99;
   }
   .title{
     display: block;

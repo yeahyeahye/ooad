@@ -11,12 +11,16 @@
             <tr><td class="td0">
               <div class="bottom">
                 <el-tooltip class="item" effect="dark" content="可包含字母、数字、下划线，长度不少于6位" placement="bottom">
-                  <el-input class="input0" type="password" placeholder="输入密码" suffix-icon="el-icon-view"></el-input>
+                  <el-input id="pass" type="password" placeholder="输入密码">
+                    <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword"></i>
+                  </el-input>
                 </el-tooltip>
               </div>
             </td></tr>
             <tr><td class="td0">
-              <el-input class="input0" type="password" placeholder="确认密码" suffix-icon="el-icon-view"></el-input>
+              <el-input id="pass2" type="password" placeholder="确认密码">
+                <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword2"></i>
+              </el-input>
             </td></tr>
             <tr><td class="td0">
               <p>&nbsp;&nbsp;&nbsp;发送验证码: <a href="mailto:qiuming@qq.com">qiuming@qq.com</a></p>
@@ -42,12 +46,32 @@
         name: "activate",
         data(){
           return{
-            input:''
+            input: '',
+            isShow1: false,
+            isShow2: false
           }
         },
         methods:{
           returnLogin(){
             this.$router.push({path:'/'});
+          },
+          showPassword() {
+            this.isShow1 = !this.isShow1;
+            var pass = document.getElementById("pass");
+            if (this.isShow1) {
+              pass.type = "text";
+            } else {
+              pass.type = "password";
+            }
+          },
+          showPassword2() {
+            this.isShow2 = !this.isShow2;
+            var pass2 = document.getElementById("pass2");
+            if (this.isShow2) {
+              pass2.type = "text";
+            } else {
+              pass2.type = "password";
+            }
           }
         }
     }
@@ -58,7 +82,7 @@
   .head{
     height: 50px;
     width:100%;
-    background-color: #CCCCCC;
+    background-color: #CCFF99;
   }
   .title{
     display: block;
@@ -84,13 +108,13 @@
   }
   .td0 a{
     text-decoration: none;
-    color: #99ccf3;
+    color: #66CCCC;
   }
   .btn{
     height:36px;
     width:50%;
     border: none;
-    background-color: #99CCCC;
+    background-color: #66CCCC;
     margin: auto;
   }
   @media (max-width: 640px) {

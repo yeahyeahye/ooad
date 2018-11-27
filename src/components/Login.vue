@@ -68,7 +68,7 @@
   .login_head {
     height: 50px;
     width: 100%;
-    background-color: #CCCCCC;
+    background-color: #CCFF99;
   }
 
   .title {
@@ -105,7 +105,7 @@
     height: 36px;
     width: 100%;
     border: none;
-    background-color: #99CCCC;
+    background-color: #66CCCC;
   }
 
   .find_pass {
@@ -124,7 +124,7 @@
   .footer p {
     text-align: center;
     line-height: 60px;
-    color: rgb(11, 255, 139);
+    color: black;
     font-size: 12px;
   }
 

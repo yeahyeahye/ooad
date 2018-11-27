@@ -50,7 +50,7 @@
   .head{
     height: 50px;
     width:100%;
-    background-color: #f5f5f5;
+    background-color: #CCFF99;
   }
   .title{
     display: block;
@@ -76,12 +76,13 @@
   }
   .td0 a{
     text-decoration: none;
+    color: #66CCCC;
   }
   .btn{
     height:36px;
     width:50%;
     border: none;
-    background-color: rgb(154, 223, 106);
+    background-color: #66CCCC;
     margin: auto;
   }
   @media (max-width: 640px) {
