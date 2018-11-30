@@ -3,9 +3,12 @@
     <div id="head" class="head">
       <div class="title"><i class="el-icon-back icon1" @click="returnHomePage"></i>我的课程
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-plus icon1"></i>
+          <i class="el-icon-menu icon1"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item>
+              <div @click="returnLogin"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+            </el-dropdown-item>
             <el-dropdown-item>
               <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
@@ -15,6 +18,9 @@
     </div>
     <div class="empty"></div>
     <div class="main">
+      <div class="new_course" @click="NewCourse">
+        <i class="el-icon-plus icon2">新建课程</i>
+      </div>
       <el-tree
         :data="data"
         :props="defaultProps"
@@ -64,10 +70,7 @@
               }]
             },
             {
-              label: '讨论课轮次',
-              children: [{
-                label: '第一轮'
-              }]
+              label: '讨论课'
             },
             {
               label: '共享设置',
@@ -97,14 +100,19 @@
     },
     methods: {
       handleNodeClick(data) {
-        console.log(data);
+        if (data.label === '讨论课')
+          this.$router.push({path: '/teacher/SeminarPage'});
       },
       returnLogin() {
         this.$router.push({path: '/'});
       },
       returnHomePage() {
         this.$router.push({path: '/teacher/HomePage'});
+      },
+      NewCourse() {
+        this.$router.push({path: '/teacher/NewCourse'});
       }
+
     }
   }
 </script>
@@ -137,5 +145,13 @@
   .empty {
     width: 100%;
     height: 30px;
+  }
+
+  .new_course {
+    height: 50px;
+  }
+
+  .icon2 {
+    float: right;
   }
 </style>

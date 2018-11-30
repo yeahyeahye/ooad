@@ -10,6 +10,8 @@ import EditEmail from "../components/teacher/EditEmail";
 import SeminarPage from "../components/teacher/SeminarPage";
 import EditPassword from "../components/teacher/EditPassword";
 import CourseManage from "../components/teacher/CourseManage";
+import NewCourse from "../components/teacher/NewCourse";
+import NewSeminar from "../components/teacher/NewSeminar";
 
 Vue.use(Router);
 
@@ -55,6 +57,15 @@ export default new Router({
     {
       path: '/teacher/CourseManage',
       component: CourseManage
+    },
+    {
+      path: '/teacher/NewCourse',
+      component: NewCourse
+    },
+    {
+      path: '/teacher/NewSeminar',
+      component: NewSeminar
     }
+
   ]
 })
