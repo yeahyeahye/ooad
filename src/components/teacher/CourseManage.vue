@@ -70,7 +70,7 @@
               }]
             },
             {
-              label: '讨论课'
+              label: '讨论课设置'
             },
             {
               label: '共享设置',
@@ -100,7 +100,7 @@
     },
     methods: {
       handleNodeClick(data) {
-        if (data.label === '讨论课')
+        if (data.label === '讨论课设置')
           this.$router.push({path: '/teacher/SeminarPage'});
       },
       returnLogin() {

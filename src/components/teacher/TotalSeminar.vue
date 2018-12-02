@@ -1,13 +1,11 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>OOAD
+      <div class="title"><i class="el-icon-back icon1" @click="returnSeminarPage"></i>我的课程
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-plus"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>
-              <div @click="returnHomePage"><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</div>
-            </el-dropdown-item>
+            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
               <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
@@ -15,17 +13,8 @@
         </el-dropdown>
       </div>
     </div>
-    <div class="empty"></div>
-    <div class="main">
-      <div class="new">
-        <div class="new_round" @click="NewRound">
-          <i class="el-icon-plus icon2">新建轮次</i>
-        </div>
-        <div class="new_seminar" @click="NewSeminar">
-          <i class="el-icon-plus">新建讨论课</i>
-        </div>
-      </div>
 
+    <div class="main">
       <el-tree
         :data="data"
         :props="defaultProps"
@@ -92,42 +81,19 @@
       </el-card>
     </div>
   </div>
+
 </template>
 
 <script>
   export default {
-    name: "SeminarPage",
+    name: "TotalSeminar",
     data() {
       return {
         data: [{
-          label: '第一轮',
+          label: 'OOAD',
           children: [{
-            label: '该轮轮次设置',
-          }, {
-            label: '业务流程分析',
+            label: '第一轮',
             children: [{
-              label: '2016--1'
-            }, {
-              label: '2016--2'
-            }, {
-              label: '2016--3'
-            }]
-          }, {
-            label: '领域模型设计',
-            children: [{
-              label: '2016--1'
-            }, {
-              label: '2016--2'
-            }, {
-              label: '2016--3'
-            }]
-          }]
-        }, {
-          label: '第二轮',
-          children: [{
-            label: '该轮轮次设置',
-          },
-            {
               label: '业务流程分析',
               children: [{
                 label: '2016--1'
@@ -136,8 +102,7 @@
               }, {
                 label: '2016--3'
               }]
-            },
-            {
+            }, {
               label: '领域模型设计',
               children: [{
                 label: '2016--1'
@@ -147,6 +112,32 @@
                 label: '2016--3'
               }]
             }]
+          }]
+        }, {
+          label: 'J2EE',
+          children: [{
+            label: '第一轮',
+            children: [{
+              label: '业务流程分析',
+              children: [{
+                label: '2016--1'
+              }, {
+                label: '2016--2'
+              }, {
+                label: '2016--3'
+              }]
+            },
+              {
+                label: '领域模型设计',
+                children: [{
+                  label: '2016--1'
+                }, {
+                  label: '2016--2'
+                }, {
+                  label: '2016--3'
+                }]
+              }]
+          }]
         }],
         defaultProps: {
           children: 'children',
@@ -182,36 +173,19 @@
           }
         ],
         value3: '',
-        seminar: [{
-          id: '1',
-          name: '用例分析',
-          course: 'OOAD',
-          desc: '界面导航图，每组要求15分组'
-        }]
 
       }
     },
     methods: {
       handleNodeClick(data) {
-        if (data.label === '该轮轮次设置')
-          this.$router.push({path: '/teacher/SetRound'});
         if (data.label === '2016--1')
-          this.$router.push({path: '/teacher/BeforeSeminar'});
+          this.$router.push({path: '/teacher/SeminarPage'});
       },
       returnLogin() {
         this.$router.push({path: '/'});
       },
-      returnHomePage() {
-        this.$router.push({path: '/teacher/HomePage'});
-      },
-      NewRound() {
-        //this.$router.push({path:'/teacher/SetRound'});
-      },
-      NewSeminar() {
-        this.$router.push({path: '/teacher/NewSeminar'});
-      },
-      returnCourseManage() {
-        this.$router.push({path: '/teacher/CourseManage'});
+      returnSeminarPage() {
+        this.$router.push({path: '/teacher/SeminarPage'});
       },
       gotoSeminar() {
         var show = document.getElementById("pop-box");
@@ -224,7 +198,6 @@
         var show = document.getElementById("pop-box");
         show.style.display = "none";
       }
-
     }
   }
 </script>
@@ -256,41 +229,16 @@
 
   .empty {
     width: 100%;
-    height: 30px;
-  }
-
-  .new {
-    height: 50px;
-  }
-
-  .new_round {
-    float: left;
-    width: 45%;
-    background-color: #ddf0f7;
-    height: 40px;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 40px;
-  }
-
-  .new_seminar {
-    float: left;
-    margin-left: 10%;
-    width: 45%;
-    background-color: #ddf0f7;
-    height: 40px;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 40px;
+    height: 60px;
+    text-align: right;
+    line-height: 60px;
   }
 
   .btn {
-    float: right;
     margin-right: 5px;
   }
 
-  .pop-box {
-    margin-top: 10px;
+  .main {
+    margin-top: 5px;
   }
-
 </style>

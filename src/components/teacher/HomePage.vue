@@ -26,8 +26,10 @@
           </el-col>
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <i class="el-icon-service"></i>
-              讨论课
+              <div @click="gotoSeminar">
+                <i class="el-icon-service"></i>
+                讨论课
+              </div>
             </el-card>
           </el-col>
         </el-row>
@@ -68,6 +70,9 @@
         },
         gotoCourseManage() {
           this.$router.push({path: '/teacher/CourseManage'});
+        },
+        gotoSeminar() {
+          this.$router.push({path: '/teacher/SeminarPage'});
         }
       }
     }

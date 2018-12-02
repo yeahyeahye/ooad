@@ -1,7 +1,7 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>新建讨论课</div>
+      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>修改讨论课信息</div>
     </div>
     <div class="main">
       <el-card class="box-card">
@@ -181,12 +181,12 @@
 
 <script>
   export default {
-    name: "NewSeminar",
+    name: "UpdateSeminarInfo",
     data() {
       return {
-        name: '',
+        name: '业务流程分析',
         description: '',
-        textarea1: '',
+        textarea1: '界面导航图和所有界面原型设计课堂讨论每个小组15分组',
         isVisible: true,
         startTime: '',
         endTime: '',
@@ -264,3 +264,4 @@
     }
   }
 </style>
+

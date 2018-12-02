@@ -18,10 +18,10 @@
     <div class="main">
       <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
         <el-form-item label="姓名">
-          <el-input v-model="formLabelAlign.name" disabled="true"></el-input>
+          <el-input v-model="formLabelAlign.name" :disabled="true"></el-input>
         </el-form-item>
         <el-form-item label="教工号">
-          <el-input v-model="formLabelAlign.account" disabled="true"></el-input>
+          <el-input v-model="formLabelAlign.account" :disabled="true"></el-input>
         </el-form-item>
         <el-form-item label="联系方式">
           <el-input v-model="formLabelAlign.email">
