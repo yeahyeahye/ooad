@@ -1,13 +1,14 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>新建讨论课</div>
+      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>轮次设置</div>
     </div>
     <div class="main">
       <el-card class="box-card">
         <div slot="header">
           <span>讨论课:</span>
-          <el-button type="success" size="small" plain style="float: right"><i class="el-icon-plus"></i>&nbsp;添加讨论课
+          <el-button type="success" size="small" plain style="float: right" @click="addSeminar"><i
+            class="el-icon-plus"></i>&nbsp;添加讨论课
           </el-button>
         </div>
         <table
@@ -137,7 +138,10 @@
         this.$router.push({path: '/teacher/SeminarPage'});
       },
       SetSuccess() {
-        this.$router.push({path: 'teacher/SeminarPage'});
+        this.$router.push({path: '/teacher/SeminarPage'});
+      },
+      addSeminar() {
+        this.$router.push({path: '/teacher/NewSeminar'});
       }
     }
   }

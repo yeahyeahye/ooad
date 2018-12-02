@@ -17,14 +17,7 @@
     </div>
     <div class="empty"></div>
     <div class="main">
-      <div class="new">
-        <div class="new_round" @click="NewRound">
-          <i class="el-icon-plus icon2">新建轮次</i>
-        </div>
-        <div class="new_seminar" @click="NewSeminar">
-          <i class="el-icon-plus">新建讨论课</i>
-        </div>
-      </div>
+
 
       <el-tree
         :data="data"
@@ -90,6 +83,15 @@
           </tr>
         </table>
       </el-card>
+    </div>
+    <div class="new">
+      <div>
+        <el-button class="button" type="success" plain @click="NewRound"><i class="el-icon-plus">新建轮次</i></el-button>
+      </div>
+      <div>
+        <el-button class="button" type="success" plain @click="NewSeminar"
+                   style="margin-top: 10px"><i class="el-icon-plus">新建讨论课</i></el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -197,6 +199,8 @@
           this.$router.push({path: '/teacher/SetRound'});
         if (data.label === '2016--1')
           this.$router.push({path: '/teacher/BeforeSeminar'});
+        if (data.label === '2016--2')
+          this.$router.push({path: '/teacher/AfterSeminar'});
       },
       returnLogin() {
         this.$router.push({path: '/'});
@@ -260,28 +264,8 @@
   }
 
   .new {
-    height: 50px;
-  }
-
-  .new_round {
-    float: left;
-    width: 45%;
-    background-color: #ddf0f7;
-    height: 40px;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 40px;
-  }
-
-  .new_seminar {
-    float: left;
-    margin-left: 10%;
-    width: 45%;
-    background-color: #ddf0f7;
-    height: 40px;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 40px;
+    width: 100%;
+    margin-top: 80px;
   }
 
   .btn {
@@ -289,6 +273,21 @@
     margin-right: 5px;
   }
 
+  .button {
+    height: 36px;
+    width: 50%;
+    border: none;
+    color: white;
+    background-color: #66CCCC;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .button {
+      width: 100%;
+      margin: auto;
+    }
+  }
   .pop-box {
     margin-top: 10px;
   }

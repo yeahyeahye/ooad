@@ -2,7 +2,7 @@
   <div>
     <div id="head" class="head">
       <div class="title">
-        <router-link :to="{name:'StartSeminar'}"><i class="el-icon-back icon1"></i></router-link>
+        <router-link :to="{name:'SeminarPage'}"><i class="el-icon-back icon1"></i></router-link>
         OOAD--讨论课
         <el-dropdown class="plus" trigger="click">
           <i class="el-icon-plus"></i>
@@ -30,35 +30,40 @@
         </tr>
         <tr>
           <td style="width: 30%">课程情况:</td>
-          <td>未开始&nbsp;&nbsp;
+          <td>{{status[2]}}&nbsp;&nbsp;
             <el-button type="text">查看信息</el-button>
           </td>
         </tr>
       </table>
     </el-card>
     <div>
-      <el-button type="success" class="btn" plain @click="startSeminar">开始讨论课</el-button>
+      <el-button type="success" class="btn" plain @click="viewReport">书面报告</el-button>
     </div>
     <div>
-      <el-button type="warning" class="btn1" plain @click="updateInfo">修改讨论课信息</el-button>
+      <el-button type="warning" class="btn1" plain @click="viewResults">查看成绩</el-button>
     </div>
-    <el-button type="danger" size="mini" plain
-               style="float: right;margin-top: 5px">
-      删除讨论课
-    </el-button>
 
   </div>
 </template>
 
 <script>
   export default {
-    name: "BeforeSeminar",
+    name: "EndSeminar",
+    data() {
+      return {
+        status: [
+          '未开始',
+          '暂停',
+          '已完成'
+        ]
+      }
+    },
     methods: {
-      updateInfo() {
-        this.$router.push({path: '/teacher/UpdateSeminarInfo'});
+      viewReport() {
+        this.$router.push({path: '/teacher/ReportPage'});
       },
-      startSeminar() {
-        this.$router.push({path: '/teacher/StartSeminar'});
+      viewResults() {
+        this.$router.push({path: '/teacher/ResultsPage'});
       }
     }
 
@@ -90,13 +95,6 @@
     line-height: 50px;
   }
 
-  .empty {
-    width: 100%;
-    height: 60px;
-    text-align: right;
-    line-height: 60px;
-  }
-
   .btn {
     width: 100%;
     border: none;
@@ -114,3 +112,4 @@
   }
 
 </style>
+

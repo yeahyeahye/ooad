@@ -12,12 +12,20 @@ import EditPassword from "../components/teacher/EditPassword";
 import CourseManage from "../components/teacher/CourseManage";
 import NewCourse from "../components/teacher/NewCourse";
 import NewSeminar from "../components/teacher/NewSeminar";
-import TotalSeminar from "../components/teacher/TotalSeminar";
 import SetRound from "../components/teacher/SetRound";
 import StartSeminar from "../components/teacher/StartSeminar";
 import SuspendSeminar from "../components/teacher/SuspendSeminar";
 import BeforeSeminar from "../components/teacher/BeforeSeminar";
 import UpdateSeminarInfo from "../components/teacher/UpdateSeminarInfo";
+import AfterSeminar from "../components/teacher/AfterSeminar";
+import ReportPage from "../components/teacher/ReportPage";
+import ResultsPage from "../components/teacher/ResultsPage";
+import UpdateReportGrade from "../components/teacher/UpdateReportGrade";
+import CourseInfo from "../components/teacher/CourseInfo";
+import StudentGrades from "../components/teacher/StudentGrades";
+import StudentGroups from "../components/teacher/StudentGroups";
+import ClassInfo from "../components/teacher/ClassInfo";
+import NewClass from "../components/teacher/NewClass";
 
 Vue.use(Router);
 
@@ -53,6 +61,7 @@ export default new Router({
       component: EditEmail
     },
     {
+      name: 'SeminarPage',
       path: '/teacher/SeminarPage',
       component: SeminarPage
     },
@@ -71,10 +80,6 @@ export default new Router({
     {
       path: '/teacher/NewSeminar',
       component: NewSeminar
-    },
-    {
-      path: '/teacher/TotalSeminar',
-      component: TotalSeminar
     },
     {
       path: '/teacher/SetRound',
@@ -99,7 +104,58 @@ export default new Router({
       name: 'UpdateSeminarInfo',
       path: '/teacher/UpdateSeminarInfo',
       component: UpdateSeminarInfo
+    },
+    {
+      name: 'AfterSeminar',
+      path: '/teacher/AfterSeminar',
+      component: AfterSeminar
+    },
+    {
+      name: 'ReportPage',
+      path: '/teacher/ReportPage',
+      component: ReportPage
+    },
+    {
+      name: 'ResultsPage',
+      path: '/teacher/ResultsPage',
+      component: ResultsPage
+    },
+    {
+      name: 'UpdateReportGrade',
+      path: '/teacher/UpdateReportGrade',
+      component: UpdateReportGrade
+    },
+    {
+      name: 'CourseInfo',
+      path: '/teacher/CourseInfo',
+      component: CourseInfo
+    },
+    {
+      name: 'StudentGrades',
+      path: '/teacher/StudentGrades',
+      component: StudentGrades
+    },
+    {
+      name: 'StudentGroups',
+      path: '/teacher/StudentGroups',
+      component: StudentGroups
+    },
+    {
+      name: 'ClassInfo',
+      path: '/teacher/ClassInfo',
+      component: ClassInfo
+    },
+    {
+      name: 'SharePage',
+      path: '/teacher/SharePage',
+      component: ClassInfo
+    },
+    {
+      name: 'NewClass',
+      path: '/teacher/NewClass',
+      component: NewClass
     }
+
 
   ]
 })

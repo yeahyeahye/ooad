@@ -1,0 +1,206 @@
+<template>
+  <div>
+    <div id="head" class="head">
+      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>我的课程
+        <el-dropdown class="plus" trigger="click">
+          <i class="el-icon-menu icon1"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item>
+              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+            </el-dropdown-item>
+            <el-dropdown-item>
+              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+    </div>
+    <div class="empty"></div>
+    <el-collapse accordion v-for="(item,index) in groups"
+                 :key="index">
+      <el-collapse-item>
+        <template slot="title">
+          {{item.groupId}}&nbsp;&nbsp;{{item.groupName}}<i class="header-icon el-icon-info"></i>
+        </template>
+        <table style="width: 100%">
+          <tr>
+            <td style="width: 20%">组长:</td>
+            <td style="width: 40%">{{item.leader.account}}</td>
+            <td>{{item.leader.name}}</td>
+          </tr>
+        </table>
+        <table style="width: 100%"
+               v-for="(item0,index0) in item.members"
+               :key="index0">
+          <tr>
+            <td style="width: 20%">组员:</td>
+            <td style="width: 40%">{{item0.account}}</td>
+            <td>{{item0.name}}</td>
+          </tr>
+        </table>
+      </el-collapse-item>
+    </el-collapse>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "StudentGroups",
+    data() {
+      return {
+        groups: [
+          {
+            groupId: '1-1',
+            groupName: 'Untitled',
+            leader: {
+              account: '24320162202xxx',
+              name: 'yyyyyy'
+            },
+            members: [
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              }
+            ]
+          },
+          {
+            groupId: '1-2',
+            groupName: 'Untitled',
+            leader: {
+              account: '24320162202xxx',
+              name: 'yyyyyy'
+            },
+            members: [
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              }
+            ]
+          },
+          {
+            groupId: '1-3',
+            groupName: 'Untitled',
+            leader: {
+              account: '24320162202xxx',
+              name: 'yyyyyy'
+            },
+            members: [
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              }
+            ]
+          },
+          {
+            groupId: '1-4',
+            groupName: 'Untitled',
+            leader: {
+              account: '24320162202xxx',
+              name: 'yyyyyy'
+            },
+            members: [
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              },
+              {
+                account: '24320162202xxx',
+                name: 'bbbbbb'
+              }
+            ]
+          }
+        ]
+      }
+    },
+    methods: {
+      returnLogin() {
+        this.$router.push({path: '/'});
+      },
+      returnCourseManage() {
+        this.$router.push({path: '/teacher/CourseManage'});
+      },
+      gotoSeminar() {
+        this.$router.push({path: '/teacher/SeminarPage'});
+      }
+
+    }
+  }
+</script>
+
+<style scoped>
+  .head {
+    height: 50px;
+    width: 100%;
+    background-color: #CCFF99;
+  }
+
+  .title {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .plus {
+    float: right;
+    margin-right: 3%;
+    line-height: 50px;
+  }
+
+  .icon1 {
+    float: left;
+    margin-left: 3%;
+    line-height: 50px;
+  }
+
+  .empty {
+    width: 100%;
+    height: 30px;
+  }
+
+</style>
+

@@ -89,7 +89,7 @@
           placeholder="选择日期时间">
         </el-date-picker>
         <br><br>
-        <el-button type="text" style="float: right">SURE</el-button>
+        <el-button type="text" style="float: right" @click="endSeminar">SURE</el-button>
       </el-card>
 
       <el-card id="pre" style="display: block">
@@ -308,6 +308,9 @@
           var finish_ = document.getElementById("finished");
           finish_.style.display = "block";
         }
+      },
+      endSeminar() {
+        this.$router.push({path: '/teacher/SeminarPage'});
       },
       quesSuccess() {
         var pre_ = document.getElementById("pre");

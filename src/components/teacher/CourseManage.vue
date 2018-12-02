@@ -7,7 +7,7 @@
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
               <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
@@ -21,12 +21,34 @@
       <div class="new_course" @click="NewCourse">
         <i class="el-icon-plus icon2">新建课程</i>
       </div>
-      <el-tree
-        :data="data"
-        :props="defaultProps"
-        accordion
-        @node-click="handleNodeClick">
-      </el-tree>
+      <el-collapse accordion>
+        <el-collapse-item v-for="(items,index) in courses"
+                          :key="index">
+          <template slot="title">
+            {{items.name}}<i class="header-icon el-icon-info"></i>
+          </template>
+          <div style="width: 100%">
+            <div>
+              <el-button class="btn" type="info" plain @click="viewGrades">{{items.item[0]}}</el-button>
+            </div>
+            <div>
+              <el-button class="btn" type="info" plain @click="viewGroups">{{items.item[1]}}</el-button>
+            </div>
+            <div>
+              <el-button class="btn" type="info" plain @click="viewCourseInfo">{{items.item[2]}}</el-button>
+            </div>
+            <div>
+              <el-button class="btn" type="info" plain @click="viewClassInfo">{{items.item[3]}}</el-button>
+            </div>
+            <div>
+              <el-button class="btn" type="info" plain @click="gotoSeminar">{{items.item[4]}}</el-button>
+            </div>
+            <div>
+              <el-button class="btn" type="info" plain @click="setShare">{{items.item[5]}}</el-button>
+            </div>
+          </div>
+        </el-collapse-item>
+      </el-collapse>
     </div>
   </div>
 </template>
@@ -36,73 +58,34 @@
     name: "CourseManage",
     data() {
       return {
-        data: [{
-          label: 'OOAD',
-          children: [{
-            label: '学生成绩',
-            children: [{
-              label: '第一轮',
-              children: [{
-                label: '1-1',
-                children: [{}]
-              }, {
-                label: '1-2',
-                children: [{}]
-              }]
-            }]
+        courses: [
+          {
+            name: 'OOAD',
+            item: [
+              '学生成绩',
+              '学生组队',
+              '课程信息',
+              '班级信息',
+              '讨论课设置',
+              '共享设置'
+            ]
           },
-            {
-              label: '学生组队',
-              children: [{
-                label: '第一轮'
-              }]
-            },
-            {
-              label: '课程信息',
-              children: [{
-                label: '第一轮'
-              }]
-            },
-            {
-              label: '班级信息',
-              children: [{
-                label: '第一轮'
-              }]
-            },
-            {
-              label: '讨论课设置'
-            },
-            {
-              label: '共享设置',
-              children: [{
-                label: '第一轮'
-              }]
-            }]
-        }, {
-          label: 'J2EE',
-          children: [{
-            label: '二级 2-1',
-            children: [{
-              label: '三级 2-1-1'
-            }]
-          }, {
-            label: '二级 2-2',
-            children: [{
-              label: '三级 2-2-1'
-            }]
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
-      };
+          {
+            name: 'J2EE',
+            item: [
+              '学生成绩',
+              '学生组队',
+              '课程信息',
+              '班级信息',
+              '讨论课设置',
+              '共享设置'
+            ]
+          }
+
+        ]
+      }
     },
     methods: {
-      handleNodeClick(data) {
-        if (data.label === '讨论课设置')
-          this.$router.push({path: '/teacher/SeminarPage'});
-      },
       returnLogin() {
         this.$router.push({path: '/'});
       },
@@ -111,6 +94,24 @@
       },
       NewCourse() {
         this.$router.push({path: '/teacher/NewCourse'});
+      },
+      viewGrades() {
+        this.$router.push({path: '/teacher/StudentGrades'});
+      },
+      viewGroups() {
+        this.$router.push({path: '/teacher/StudentGroups'});
+      },
+      viewCourseInfo() {
+        this.$router.push({path: '/teacher/CourseInfo'});
+      },
+      viewClassInfo() {
+        this.$router.push({path: '/teacher/ClassInfo'});
+      },
+      gotoSeminar() {
+        this.$router.push({path: '/teacher/SeminarPage'});
+      },
+      setShare() {
+        this.$router.push({path: '/teacher/SharePage'});
       }
 
     }
@@ -153,5 +154,9 @@
 
   .icon2 {
     float: right;
+  }
+
+  .btn {
+    width: 100%;
   }
 </style>

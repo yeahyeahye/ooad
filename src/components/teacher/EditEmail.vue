@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="main">
-      <el-form :label-position="labelPosition" label-width="80px">
+      <el-form label-width="80px">
         <el-form-item></el-form-item>
         <el-form-item label="e-mail:">
           <el-input placeholder="填写邮箱"></el-input>
@@ -30,7 +30,7 @@
       </el-form>
     </div>
     <div class="footer">
-      <el-button class="btn1" type="success" @click="returnHomePage">确认修改</el-button>
+      <el-button class="btn1" type="success" @click="returnAccountManage">确认修改</el-button>
     </div>
   </div>
 </template>

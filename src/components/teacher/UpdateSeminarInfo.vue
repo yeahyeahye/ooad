@@ -95,7 +95,7 @@
               <tr>
                 <td style="width: 28%">所属round:</td>
                 <td style="text-align: right">
-                  <el-select v-model="value" placeholder="请选择">
+                  <el-select v-model="value1" placeholder="请选择">
                     <el-option
                       v-for="item in rounds"
                       :key="item.value"
@@ -172,7 +172,7 @@
       </el-collapse>
 
       <div style="width: 100%;margin-top: 20px">
-        <el-button class="btn" type="success" @click="NewSuccess">发布</el-button>
+        <el-button class="btn" type="success" @click="NewSuccess">保存</el-button>
       </div>
 
     </div>
@@ -188,9 +188,9 @@
         description: '',
         textarea1: '界面导航图和所有界面原型设计课堂讨论每个小组15分组',
         isVisible: true,
-        startTime: '',
-        endTime: '',
-        signUpNum: 1,
+        startTime: '2018-12-02 08:19:53',
+        endTime: '2018-12-06 08:19:53',
+        signUpNum: 6,
         orderNum: 1,
         signUpOrder: [{
           value: '选项1',
@@ -207,7 +207,8 @@
           value: '选项2',
           label: '第一轮'
         }],
-        value: ''
+        value: '默认',
+        value1: '1'
       }
     },
     methods: {

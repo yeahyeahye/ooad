@@ -9,7 +9,7 @@
           <tr>
             <td style="width: 28%">课程名称</td>
             <td>
-              <el-input v-model="name">
+              <el-input v-model="course.name">
                 <i slot="suffix" class="el-input__icon el-icon-edit"></i>
               </el-input>
             </td>
@@ -20,7 +20,7 @@
               <el-input class="textArea"
                         type="textarea"
                         :autosize="{ minRows: 2, maxRows: 6}"
-                        v-model="textarea1">
+                        v-model="course.description">
               </el-input>
             </td>
           </tr>
@@ -29,27 +29,15 @@
       <el-card class="box-card">
         <span>成绩计算规则</span>
         <table
-          :data="tableData1"
+          v-for="(item,index) in course.tableData1"
+          :key="index"
           style="width: 100%">
           <tr>
-            <td class="td0">课堂展示</td>
+            <td class="td0">{{item.make_up}}</td>
             <td>
-              <el-input-number size="mini" v-model="tableData1[0].percentage"></el-input-number>
+              <el-input-number size="mini" v-model="item.percentage"></el-input-number>
             </td>
           </tr>
-          <tr>
-            <td class="td0">课堂提问</td>
-            <td>
-              <el-input-number size="mini" v-model="tableData1[1].percentage"></el-input-number>
-            </td>
-          </tr>
-          <tr>
-            <td class="td0">书面报告</td>
-            <td>
-              <el-input-number size="mini" v-model="tableData1[2].percentage"></el-input-number>
-            </td>
-          </tr>
-
         </table>
       </el-card>
       <el-card class="box-card">
@@ -58,10 +46,10 @@
           <tr>
             <td style="width:30%">小组人数:</td>
             <td>
-              <el-input placeholder="下限"></el-input>
+              <el-input placeholder="下限" v-model="course.minNum"></el-input>
             </td>
             <td>
-              <el-input placeholder="上限"></el-input>
+              <el-input placeholder="上限" v-model="course.maxNum"></el-input>
             </td>
           </tr>
         </table>
@@ -71,7 +59,7 @@
             <td style="width: 28%">组队开始:</td>
             <td style="text-align: right">
               <el-date-picker
-                v-model="startTime"
+                v-model="course.startTime"
                 type="datetime"
                 placeholder="选择日期时间"
                 style="width:100%">
@@ -82,7 +70,7 @@
             <td style="width: 28%">组队截止:</td>
             <td style="text-align: right">
               <el-date-picker
-                v-model="endTime"
+                v-model="course.endTime"
                 type="datetime"
                 placeholder="选择日期时间"
                 style="width: 100%">
@@ -105,23 +93,26 @@
     name: "NewCourse",
     data() {
       return {
-        name: '',
-        description: '',
-        textarea1: '',
-        tableData1: [{
-          make_up: '课堂展示',
-          percentage: '1',
-        },
-          {
-            make_up: '课堂提问',
-            percentage: '2',
+        course: {
+          name: '',
+          description: '',
+          tableData1: [{
+            make_up: '课堂展示',
+            percentage: '1',
           },
-          {
-            make_up: '书面报告',
-            percentage: '3',
-          }],
-        startTime: '',
-        endTime: ''
+            {
+              make_up: '课堂提问',
+              percentage: '2',
+            },
+            {
+              make_up: '书面报告',
+              percentage: '3',
+            }],
+          startTime: '',
+          endTime: '',
+          minNum: '',
+          maxNum: ''
+        }
       }
     },
     methods: {

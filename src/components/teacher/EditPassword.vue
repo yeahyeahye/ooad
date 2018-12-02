@@ -50,7 +50,7 @@
       </table>
     </div>
     <div class="footer">
-      <el-button class="btn1" type="success" @click="returnHomePage">确认修改</el-button>
+      <el-button class="btn1" type="success" @click="returnAccountManage">确认修改</el-button>
     </div>
   </div>
 </template>
