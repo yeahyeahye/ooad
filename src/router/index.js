@@ -37,26 +37,32 @@ export default new Router({
       component: Login
     },
     {
+      name: 'Activate',
       path:'/teacher/Activate',
       component:Activate
     },
     {
+      name: 'FindPassword',
       path:'/teacher/FindPassword',
       component:FindPassword
     },
     {
+      name: 'HomePage',
       path:'/teacher/HomePage',
       component:HomePage
     },
     {
+      name: 'SetPassword',
       path:'/teacher/SetPassword',
       component:SetPassword
     },
     {
+      name: 'AccountManage',
       path:'/teacher/AccountManage',
       component:AccountManage
     },
     {
+      name: 'EditEmail',
       path: '/teacher/EditEmail',
       component: EditEmail
     },
@@ -66,22 +72,27 @@ export default new Router({
       component: SeminarPage
     },
     {
+      name: 'EditPassword',
       path: '/teacher/EditPassword',
       component: EditPassword
     },
     {
+      name: 'CourseManage',
       path: '/teacher/CourseManage',
       component: CourseManage
     },
     {
+      name: 'NewCourse',
       path: '/teacher/NewCourse',
       component: NewCourse
     },
     {
+      name: 'NewSeminar',
       path: '/teacher/NewSeminar',
       component: NewSeminar
     },
     {
+      name: 'SetRound',
       path: '/teacher/SetRound',
       component: SetRound
     },

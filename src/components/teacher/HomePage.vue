@@ -1,9 +1,9 @@
 <template>
     <div>
       <div id="head" class="head">
-        <div class="title">我
+        <div class="title"><i class="iconfont icon-yonghu"></i><span style="float: left">{{username}}</span>
           <el-dropdown class="plus" trigger="click">
-            <i class="el-icon-plus icon1"></i>
+            <i class="el-icon-plus icon1" style="font:25px bolder"></i>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
               <el-dropdown-item>
@@ -18,15 +18,15 @@
         <el-row :gutter="12">
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <div @click="gotoCourseManage">
-                <i class="el-icon-menu menu"></i>
+              <div @click="gotoCourseManage" class="card1">
+                <i class="el-icon-menu"></i>
                 我的课程
               </div>
             </el-card>
           </el-col>
           <el-col :span="12">
             <el-card shadow="hover" class="card">
-              <div @click="gotoSeminar">
+              <div @click="gotoSeminar" class="card1">
                 <i class="el-icon-service"></i>
                 讨论课
               </div>
@@ -60,8 +60,27 @@
 
 <script>
     export default {
-        name: "HomePage",
+      name: "HomePage",
+      data() {
+        return {
+          id: '',
+          password: '',
+          username: ''
+        }
+      },
+      created() {
+        this.getData();
+      },
       methods:{
+        getData() {
+          this.id = this.$route.query.id;
+          this.password = this.$route.query.password;
+          this.username = this.$route.query.username;
+          console.log('id', this.id);
+          console.log('password', this.password);
+          console.log('username', this.username);
+
+        },
           SetAccount(){
             this.$router.push({path:'/teacher/AccountManage'});
           },
@@ -94,6 +113,13 @@
     margin-right: 3%;
     line-height: 70px;
   }
+
+  .icon-yonghu {
+    float: left;
+    font-size: 25px;
+    margin-left: 15px;
+    line-height: 70px;
+  }
   .empty{
     width:100%;
     height:50px;
@@ -107,10 +133,10 @@
     height:100px;
     border-radius: 10px;
     text-align: center;
-
     margin-top: 10px;
     background-color: #99CCCC;
   }
+
 
   @media (max-width: 640px) {
     .main {
@@ -120,6 +146,7 @@
   .item {
     margin-top: 5px;
     margin-right: 6px;
-
   }
+
+
 </style>

@@ -22,19 +22,21 @@
                    :key="index">
         <el-collapse-item>
           <template slot="title">
-            &nbsp;&nbsp;<i class="header-icon el-icon-star-off"></i>&nbsp;&nbsp;{{item.groupId}}&nbsp;&nbsp;{{item.groupName}}
+            <div style="font-weight: bold">
+              &nbsp;&nbsp;<i class="header-icon el-icon-star-off"></i>&nbsp;&nbsp;{{item.groupId}}&nbsp;&nbsp;{{item.groupName}}
+            </div>
           </template>
-          <table style="width: 100%;background-color: lavender">
-            <tr>
-              <td style="width: 20%">组长:</td>
+          <table style="width: 100%;background-color: lavender;text-align: center">
+            <tr style="height: 40px">
+              <td style="width: 20%;font-weight: bold">组长:</td>
               <td style="width: 40%">{{item.leader.account}}</td>
               <td>{{item.leader.name}}</td>
             </tr>
           </table>
-          <table style="width: 100%;background-color: beige"
+          <table style="width: 100%;background-color: beige;text-align:center"
                  v-for="(item0,index0) in item.members"
                  :key="index0">
-            <tr>
+            <tr style="height: 30px">
               <td style="width: 20%">组员:</td>
               <td style="width: 40%">{{item0.account}}</td>
               <td>{{item0.name}}</td>

@@ -17,18 +17,19 @@
     </div>
     <div class="empty"></div>
     <div class="main">
-
-
       <el-tree
         :data="data"
         :props="defaultProps"
         accordion
         @node-click="handleNodeClick"
-        style="width: 100%;background-color: gainsboro;">
+        style="width: 100%;background-color: gainsboro;font-weight: bold">
       </el-tree>
 
       <div class="empty">
-        <el-button class="btn" size="small" type="danger" plain @click="gotoSeminar">正在进行的讨论课</el-button>
+        <el-button class="btn" size="small" plain
+                   @click="gotoSeminar"
+                   style="background-color: #f8e9e9;border-color:#ff9999;color:#ff6666">正在进行的讨论课
+        </el-button>
       </div>
       <div id="pop-box" class="pop-box" style="display:none">
         <el-card class="box-card">
@@ -76,10 +77,12 @@
           <table style="width: 100%">
             <tr>
               <td style="width: 50%;text-align: center">
-                <el-button type="success" plain @click="gotoStartSeminar">确认</el-button>
+                <el-button plain type="success"
+                           @click="gotoStartSeminar">确认
+                </el-button>
               </td>
               <td style="width: 50%;text-align: center">
-                <el-button type="warning" plain @click="CancelPopBox">取消</el-button>
+                <el-button type="info" plain @click="CancelPopBox">取消</el-button>
               </td>
             </tr>
           </table>
@@ -87,11 +90,14 @@
       </div>
       <div class="new">
         <div>
-          <el-button class="button" type="success" plain @click="NewRound"><i class="el-icon-plus">新建轮次</i></el-button>
+          <el-button class="button" type="success" plain @click="NewRound"><i class="el-icon-plus"
+                                                                              style="font-weight: bolder"></i>&nbsp;&nbsp;新建轮次
+          </el-button>
         </div>
         <div>
           <el-button class="button" type="success" plain @click="NewSeminar"
-                     style="margin-top: 10px"><i class="el-icon-plus">新建讨论课</i></el-button>
+                     style="margin-top: 10px"><i class="el-icon-plus" style="font-weight: bolder"></i>&nbsp;&nbsp;新建讨论课
+          </el-button>
         </div>
       </div>
     </div>

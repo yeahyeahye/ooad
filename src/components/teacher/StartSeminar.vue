@@ -99,7 +99,7 @@
               <el-button type="primary" plain size="small" @click="start">开始展示</el-button>
             </td>
             <td style="width: 30%">
-              <el-button type="warning" plain size="small" @click="stop">结束展示</el-button>
+              <el-button type="primary" plain size="small" @click="stop">结束展示</el-button>
             </td>
             <td style="text-align: center">{{str}}</td>
           </tr>
@@ -112,19 +112,19 @@
             </td>
           </tr>
         </table>
-        <el-button type="danger" plain size="mini"
-                   style="float: left;margin-top: 5px;margin-bottom: 10px"
+        <el-button plain size="mini"
+                   style="float: left;margin-top: 5px;margin-bottom: 10px;background-color: #f8e9e9;border-color:#ff9999;color:#ff6666"
                    @click="displayOthers">
           修改展示成绩
         </el-button>
-        <el-button type="danger" plain size="mini"
-                   style="float: left;margin-top: 5px;margin-bottom: 10px"
+        <el-button plain size="mini"
+                   style="float: left;margin-top: 5px;margin-bottom: 10px;background-color: #f8e9e9;border-color:#ff9999;color:#ff6666"
                    @click="quesOthers">
           修改提问成绩
         </el-button>
-        <el-button type="danger" size="mini"
+        <el-button size="mini"
                    icon="el-icon-caret-right" circle
-                   style="float: right;margin-top: 5px;margin-bottom: 10px"
+                   style="float: right;margin-top: 5px;margin-bottom: 10px;background-color: #f8e9e9;border-color:#ff9999;color:#ff6666"
                    @click="isSuspend"></el-button>
       </el-card>
       <el-card id="ques" style="display: none">

@@ -12,7 +12,7 @@
           </tr>
           <tr>
             <td class="td0">
-              <el-input class="input0" type="text" placeholder="学号/教工号/管理员账号"></el-input>
+              <el-input class="input0" type="text" placeholder="学号/教工号/管理员账号" v-model="id"></el-input>
             </td>
           </tr>
           <tr>
@@ -20,7 +20,7 @@
               <div class="bottom">
                 <el-tooltip class="item" effect="dark" content="可包含字母、数字、下划线，长度不少于6位" placement="bottom">
                   <el-input class="input0" id="pass" type="password" placeholder="输入密码"
-                            suffix-icon="el-icon-view"></el-input>
+                            suffix-icon="el-icon-view" v-model="password"></el-input>
                 </el-tooltip>
               </div>
             </td>
@@ -49,13 +49,39 @@
 
 <script>
   export default {
+    data() {
+      return {
+        id: '',
+        password: ''
+      }
+    },
     methods: {
       Login() {
+        let _this = this;
+        _this.$axios({
+          method: 'post',
+          url: '/Login',
+          data: {
+            id: _this.id,
+            password: _this.password
+          }
+        })
+          .then(reponse => {
+            if (reponse.data === '登录成功') {
+              _this.$router.push({
+                path: '/teacher/HomePage',
+                name: 'HomePage',
+                query: {
+                  id: reponse.data.data.id,
+                  password: reponse.data.data.password
+                }
+              })
+            } else {
 
-        this.$router.push({
-          path: '/teacher/HomePage',
+            }
+          }).catch(error => {
+          console.log(error);
         });
-
       },
       FindPassword() {
         this.$router.push({path: '/teacher/FindPassword'})

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnHomePage"></i>我的课程
+      <div class="title"><i class="el-icon-back icon1" @click="returnHomePage"></i><span>我的课程</span>
         <el-dropdown class="plus" trigger="click">
           <i class="el-icon-more icon1"></i>
           <el-dropdown-menu slot="dropdown">
@@ -19,14 +19,18 @@
     <div class="empty"></div>
     <div class="main">
       <div class="new_course" @click="NewCourse">
-        <i class="el-icon-plus icon2">新建课程</i>
+        <i class="el-icon-plus icon2" style="font-weight: bolder;color: #66cccc"><span
+          style="color: dimgrey">新建课程</span></i>
       </div>
       <el-collapse accordion
                    background-color="#66CCCC">
         <el-collapse-item v-for="(items,index) in courses"
-                          :key="index">
+                          :key="index"
+        >
           <template slot="title">
-            &nbsp;&nbsp;<i class="header-icon el-icon-menu"></i>&nbsp;&nbsp;{{items.name}}
+            <div style="font-weight: bold">
+              &nbsp;&nbsp;<i class="header-icon el-icon-menu"></i>&nbsp;&nbsp;{{items.name}}
+            </div>
           </template>
           <div style="width: 100%">
             <div>
@@ -142,6 +146,7 @@
     float: left;
     margin-left: 3%;
     line-height: 70px;
+    font-weight: bolder;
   }
 
   .empty {
@@ -154,6 +159,7 @@
     margin: auto;
   }
   .new_course {
+    width: 100%;
     height: 50px;
   }
 

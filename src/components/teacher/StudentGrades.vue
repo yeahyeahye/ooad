@@ -20,7 +20,7 @@
     <div class="main">
       <el-collapse accordion v-for="(round,index) in grades"
                    :key="index">
-        <el-collapse-item>
+        <el-collapse-item style="color: gainsboro">
           <template slot="title">
             &nbsp;&nbsp;<i class="header-icon el-icon-service"></i>&nbsp;&nbsp;{{round.name}}
           </template>
@@ -29,7 +29,7 @@
                      :key="index"
                      default-active="2"
                      class="el-menu-vertical-demo"
-                     background-color="#cccccc"
+                     background-color="gainsboro"
                      text-color="#66cccc"
                      active-text-color="#339999">
               <el-submenu index="index">
@@ -210,6 +210,7 @@
     float: left;
     margin-left: 3%;
     line-height: 70px;
+    font-weight: bolder;
   }
 
   .empty {
