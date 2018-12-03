@@ -23,74 +23,76 @@
         :data="data"
         :props="defaultProps"
         accordion
-        @node-click="handleNodeClick">
+        @node-click="handleNodeClick"
+        style="width: 100%;background-color: gainsboro;">
       </el-tree>
-    </div>
-    <div class="empty">
-      <el-button class="btn" size="small" type="danger" plain @click="gotoSeminar">正在进行的讨论课</el-button>
-    </div>
-    <div id="pop-box" class="pop-box" style="display:none">
-      <el-card class="box-card">
-        <div slot="header">
-          <span>请选择要进入的讨论课</span>
-        </div>
-        <table style="width: 100%">
-          <tr>
-            <td style="width: 100%;text-align: center">
-              <el-select v-model="value" placeholder="课程">
-                <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 100%;text-align: center">
-              <el-select v-model="value2" placeholder="班级">
-                <el-option
-                  v-for="item in options2"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 100%;text-align: center">
-              <el-select v-model="value3" placeholder="讨论课">
-                <el-option
-                  v-for="item in options3"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select>
-            </td>
-          </tr>
-        </table>
-        <table style="width: 100%">
-          <tr>
-            <td style="width: 50%;text-align: center">
-              <el-button type="success" plain @click="gotoStartSeminar">确认</el-button>
-            </td>
-            <td style="width: 50%;text-align: center">
-              <el-button type="warning" plain @click="CancelPopBox">取消</el-button>
-            </td>
-          </tr>
-        </table>
-      </el-card>
-    </div>
-    <div class="new">
-      <div>
-        <el-button class="button" type="success" plain @click="NewRound"><i class="el-icon-plus">新建轮次</i></el-button>
+
+      <div class="empty">
+        <el-button class="btn" size="small" type="danger" plain @click="gotoSeminar">正在进行的讨论课</el-button>
       </div>
-      <div>
-        <el-button class="button" type="success" plain @click="NewSeminar"
-                   style="margin-top: 10px"><i class="el-icon-plus">新建讨论课</i></el-button>
+      <div id="pop-box" class="pop-box" style="display:none">
+        <el-card class="box-card">
+          <div slot="header">
+            <span>请选择要进入的讨论课</span>
+          </div>
+          <table style="width: 100%">
+            <tr>
+              <td style="width: 100%;text-align: center">
+                <el-select v-model="value" placeholder="课程">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 100%;text-align: center">
+                <el-select v-model="value2" placeholder="班级">
+                  <el-option
+                    v-for="item in options2"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 100%;text-align: center">
+                <el-select v-model="value3" placeholder="讨论课">
+                  <el-option
+                    v-for="item in options3"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%">
+            <tr>
+              <td style="width: 50%;text-align: center">
+                <el-button type="success" plain @click="gotoStartSeminar">确认</el-button>
+              </td>
+              <td style="width: 50%;text-align: center">
+                <el-button type="warning" plain @click="CancelPopBox">取消</el-button>
+              </td>
+            </tr>
+          </table>
+        </el-card>
+      </div>
+      <div class="new">
+        <div>
+          <el-button class="button" type="success" plain @click="NewRound"><i class="el-icon-plus">新建轮次</i></el-button>
+        </div>
+        <div>
+          <el-button class="button" type="success" plain @click="NewSeminar"
+                     style="margin-top: 10px"><i class="el-icon-plus">新建讨论课</i></el-button>
+        </div>
       </div>
     </div>
   </div>
@@ -235,7 +237,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -243,19 +245,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .empty {
@@ -271,25 +273,29 @@
   .btn {
     float: right;
     margin-right: 5px;
+    margin-top: 10px;
   }
 
   .button {
     height: 36px;
-    width: 50%;
+    width: 100%;
     border: none;
     color: white;
     background-color: #66CCCC;
-    margin: auto;
   }
 
+  .main {
+    width: 50%;
+    margin: auto;
+  }
   @media (max-width: 640px) {
-    .button {
+    .main {
       width: 100%;
-      margin: auto;
     }
   }
+
   .pop-box {
-    margin-top: 10px;
+    margin-top: 25px;
   }
 
 </style>

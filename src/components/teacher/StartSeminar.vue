@@ -113,18 +113,18 @@
           </tr>
         </table>
         <el-button type="danger" plain size="mini"
-                   style="float: left;margin-top: 5px"
+                   style="float: left;margin-top: 5px;margin-bottom: 10px"
                    @click="displayOthers">
           修改展示成绩
         </el-button>
         <el-button type="danger" plain size="mini"
-                   style="float: left;margin-top: 5px"
+                   style="float: left;margin-top: 5px;margin-bottom: 10px"
                    @click="quesOthers">
           修改提问成绩
         </el-button>
         <el-button type="danger" size="mini"
                    icon="el-icon-caret-right" circle
-                   style="float: left;margin-top: 5px"
+                   style="float: right;margin-top: 5px;margin-bottom: 10px"
                    @click="isSuspend"></el-button>
       </el-card>
       <el-card id="ques" style="display: none">
@@ -141,7 +141,7 @@
         </table>
         <el-button type="success" size="mini" plain
                    @click="quesSuccess"
-                   style="float: right">确认
+                   style="float: right;margin-top: 10px;margin-bottom: 10px">确认
         </el-button>
       </el-card>
       <el-card id="update" style="display: none">
@@ -158,7 +158,7 @@
         </table>
         <el-button type="success" size="mini" plain
                    @click="updateSuccess"
-                   style="float: right">确认修改
+                   style="float: right;margin-top: 10px;margin-bottom: 10px">确认修改
         </el-button>
       </el-card>
       <el-card id="update1" style="display: none">
@@ -175,7 +175,7 @@
         </table>
         <el-button type="success" size="mini" plain
                    @click="updateSuccess1"
-                   style="float: right">确认修改
+                   style="float: right;margin-top: 10px;margin-bottom: 10px">确认修改
         </el-button>
       </el-card>
       <el-card id="next" style="display: block">
@@ -185,15 +185,19 @@
           style="font-size: 12px">
           当前有{{num}}位同学报名提问
         </el-alert>
+        <div style="width: 100%;height: 10px"></div>
         <el-alert
           type="success"
           show-icon
           style="font-size: 12px">
           当前已有{{num1}}位同学提问
         </el-alert>
-        <div style="margin-top: 10px">
-          <el-button style="width: 40%;float:left" @click="askQuestions">抽取提问</el-button>
-          <el-button id="nextGroup" style="width:40%;float:right" @click="nextGroup">下组展示</el-button>
+        <div style="width:100%;">
+          <el-button style="width: 40%;float:left;margin-top: 10px;margin-bottom: 10px" @click="askQuestions">抽取提问
+          </el-button>
+          <el-button id="nextGroup" style="width:40%;float:right;margin-top: 10px;margin-bottom: 10px"
+                     @click="nextGroup">下组展示
+          </el-button>
         </div>
       </el-card>
 
@@ -384,7 +388,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -392,19 +396,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .pause {
@@ -438,6 +442,13 @@
   }
 
   .main {
-    margin-top: 5px;
+    margin: auto;
+    width: 50%;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

@@ -15,37 +15,41 @@
         </el-dropdown>
       </div>
     </div>
-    <el-card>
-      <div slot="header">
-        <span>主题:{{}}</span>
+    <div class="main">
+      <div style="width: 100%;height: 15px"></div>
+      <el-card>
+        <div slot="header">
+          <span>主题:{{}}</span>
+        </div>
+        <table style="width: 100%;text-align: center">
+          <tr style="line-height: 40px">
+            <td style="width: 30%">课次序号:</td>
+            <td>{{}}</td>
+          </tr>
+          <tr>
+            <td style="width: 30%">要求:</td>
+            <td style="text-align: left">{{}}</td>
+          </tr>
+          <tr>
+            <td style="width: 30%">课程情况:</td>
+            <td>未开始&nbsp;&nbsp;
+              <el-button type="text">查看信息</el-button>
+            </td>
+          </tr>
+        </table>
+      </el-card>
+      <div>
+        <el-button type="success" class="btn" plain @click="startSeminar">开始讨论课</el-button>
       </div>
-      <table style="width: 100%;text-align: center">
-        <tr style="line-height: 40px">
-          <td style="width: 30%">课次序号:</td>
-          <td>{{}}</td>
-        </tr>
-        <tr>
-          <td style="width: 30%">要求:</td>
-          <td style="text-align: left">{{}}</td>
-        </tr>
-        <tr>
-          <td style="width: 30%">课程情况:</td>
-          <td>未开始&nbsp;&nbsp;
-            <el-button type="text">查看信息</el-button>
-          </td>
-        </tr>
-      </table>
-    </el-card>
-    <div>
-      <el-button type="success" class="btn" plain @click="startSeminar">开始讨论课</el-button>
+      <div>
+        <el-button type="warning" class="btn1" plain @click="updateInfo">修改讨论课信息</el-button>
+      </div>
+      <el-button type="danger" size="mini" plain
+                 style="float: right;margin-top: 5px">
+        删除讨论课
+      </el-button>
     </div>
-    <div>
-      <el-button type="warning" class="btn1" plain @click="updateInfo">修改讨论课信息</el-button>
-    </div>
-    <el-button type="danger" size="mini" plain
-               style="float: right;margin-top: 5px">
-      删除讨论课
-    </el-button>
+
 
   </div>
 </template>
@@ -67,7 +71,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -75,26 +79,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
-  }
-
-  .empty {
-    width: 100%;
-    height: 60px;
-    text-align: right;
-    line-height: 60px;
+    line-height: 70px;
   }
 
   .btn {
@@ -111,6 +108,17 @@
     color: white;
     background-color: #66cccc;
     margin-top: 5px;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 
 </style>

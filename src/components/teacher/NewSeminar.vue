@@ -46,69 +46,8 @@
       <el-collapse accordion>
         <el-collapse-item>
           <template slot="title">
-            2016--1<i class="header-icon el-icon-info"></i>
+            &nbsp;&nbsp;<i class="header-icon el-icon-info"></i>&nbsp;&nbsp;2016--1
           </template>
-          <el-card class="box-card">
-            <table
-              style="width:100%">
-              <tr>
-                <td style="width: 28%">报名开始:</td>
-                <td style="text-align: right">
-                  <el-date-picker
-                    v-model="startTime"
-                    type="datetime"
-                    placeholder="选择日期时间"
-                    style="width:100%">
-                  </el-date-picker>
-                </td>
-              </tr>
-              <tr>
-                <td style="width: 28%">报名截止:</td>
-                <td style="text-align: right">
-                  <el-date-picker
-                    v-model="endTime"
-                    type="datetime"
-                    placeholder="选择日期时间"
-                    style="width: 100%">
-                  </el-date-picker>
-                </td>
-              </tr>
-              <tr>
-                <td style="width: 28%">报名组数:</td>
-                <td style="text-align: right">
-                  <el-input-number size="mini" v-model="signUpNum"></el-input-number>
-                </td>
-              </tr>
-              <tr>
-                <td style="width: 28%">报名顺序:</td>
-                <td style="text-align: right">
-                  <el-select v-model="value" placeholder="请选择">
-                    <el-option
-                      v-for="item in signUpOrder"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value">
-                    </el-option>
-                  </el-select>
-                </td>
-              </tr>
-              <tr>
-                <td style="width: 28%">所属round:</td>
-                <td style="text-align: right">
-                  <el-select v-model="value" placeholder="请选择">
-                    <el-option
-                      v-for="item in rounds"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value">
-                    </el-option>
-                  </el-select>
-                </td>
-              </tr>
-            </table>
-          </el-card>
-        </el-collapse-item>
-        <el-collapse-item title="2016--2">
           <el-card class="box-card">
             <table
               style="width:100%">
@@ -228,7 +167,7 @@
   }
 
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -236,13 +175,13 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .box-card {
@@ -251,16 +190,19 @@
 
   .btn {
     height: 36px;
-    width: 50%;
+    width: 100%;
     border: none;
     background-color: #66CCCC;
     margin: auto;
   }
 
+  .main {
+    width: 50%;
+    margin: auto;
+  }
   @media (max-width: 640px) {
-    .btn {
+    .main {
       width: 100%;
-      margin: auto;
     }
   }
 </style>

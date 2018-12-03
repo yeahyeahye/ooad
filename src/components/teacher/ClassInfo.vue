@@ -16,62 +16,65 @@
         </el-dropdown>
       </div>
     </div>
-    <div style="margin-top: 10px;margin-bottom: 10px">
-      <el-button type="success" plain
-                 style="width: 100%"
-                 @click="addClass">
-        <i class="el-icon-plus"></i>&nbsp;新增班级
-      </el-button>
-    </div>
-    <div style="width: 100%"
-         v-for="(item,index) in classInfo"
-         :key="index">
-      <el-card>
-        <div slot="header">
-          <span>{{item.classId}}</span>
-        </div>
-        <table style="width: 100%">
-          <tr>
-            <td style="width: 35%">讨论课时间:</td>
-            <td>{{item.time}}</td>
-          </tr>
-          <tr>
-            <td style="width: 35%">讨论课地点:</td>
-            <td>{{item.address}}</td>
-          </tr>
-          <tr>
-            <td style="width: 35%">学生名单:</td>
-            <td>{{item.nameList.name}}</td>
-          </tr>
-          <tr>
-            <td style="width: 35%"></td>
-            <td>
-              <el-upload
-                class="upload-demo"
-                action="https://jsonplaceholder.typicode.com/posts/"
-                multiple
-                :limit="3"
-                :on-exceed="handleExceed">
-                <el-button size="mini" type="info">点击上传</el-button>
-                <div slot="tip" class="el-upload__tip" style="float:right">未选择任何文件</div>
-              </el-upload>
-            </td>
-          </tr>
-        </table>
-        <table style="width: 100%;text-align: center">
-          <tr style="height: 20px">
-            <td></td>
-          </tr>
-          <tr style="height: 20px">
-            <td>
-              <el-button type="danger" plain style="width: 50%">删除班级</el-button>
-            </td>
-          </tr>
-          <tr style="height: 20px">
-            <td></td>
-          </tr>
-        </table>
-      </el-card>
+    <div class="main">
+      <div style="margin-top: 10px;margin-bottom: 10px">
+        <el-button type="success" plain
+                   style="width: 100%"
+                   @click="addClass">
+          <i class="el-icon-plus"></i>&nbsp;新增班级
+        </el-button>
+      </div>
+      <div style="width: 100%"
+           v-for="(item,index) in classInfo"
+           :key="index">
+        <el-card style="background-color: aliceblue">
+          <div slot="header">
+            <span>{{item.classId}}</span>
+          </div>
+          <table style="width: 100%">
+            <tr>
+              <td style="width: 35%">讨论课时间:</td>
+              <td>{{item.time}}</td>
+            </tr>
+            <tr>
+              <td style="width: 35%">讨论课地点:</td>
+              <td>{{item.address}}</td>
+            </tr>
+            <tr>
+              <td style="width: 35%">学生名单:</td>
+              <td>{{item.nameList.name}}</td>
+            </tr>
+            <tr>
+              <td style="width: 35%"></td>
+              <td>
+                <el-upload
+                  class="upload-demo"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  multiple
+                  :limit="3"
+                  :on-exceed="handleExceed">
+                  <el-button size="mini" type="info">点击上传</el-button>
+                  <div slot="tip" class="el-upload__tip" style="float:right">未选择任何文件</div>
+                </el-upload>
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%;text-align: center">
+            <tr style="height: 20px">
+              <td></td>
+            </tr>
+            <tr style="height: 20px">
+              <td>
+                <el-button type="danger" plain style="width: 50%">删除班级</el-button>
+              </td>
+            </tr>
+            <tr style="height: 20px">
+              <td></td>
+            </tr>
+          </table>
+        </el-card>
+
+      </div>
 
     </div>
 
@@ -139,7 +142,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -147,18 +150,29 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

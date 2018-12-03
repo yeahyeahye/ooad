@@ -3,7 +3,7 @@
     <div id="head" class="head">
       <div class="title"><i class="el-icon-back icon1" @click="returnHomePage"></i>我的课程
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu icon1"></i>
+          <i class="el-icon-more icon1"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
@@ -21,11 +21,12 @@
       <div class="new_course" @click="NewCourse">
         <i class="el-icon-plus icon2">新建课程</i>
       </div>
-      <el-collapse accordion>
+      <el-collapse accordion
+                   background-color="#66CCCC">
         <el-collapse-item v-for="(items,index) in courses"
                           :key="index">
           <template slot="title">
-            {{items.name}}<i class="header-icon el-icon-info"></i>
+            &nbsp;&nbsp;<i class="header-icon el-icon-menu"></i>&nbsp;&nbsp;{{items.name}}
           </template>
           <div style="width: 100%">
             <div>
@@ -120,7 +121,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -128,19 +129,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .empty {
@@ -148,6 +149,10 @@
     height: 30px;
   }
 
+  .main {
+    width: 50%;
+    margin: auto;
+  }
   .new_course {
     height: 50px;
   }
@@ -158,5 +163,11 @@
 
   .btn {
     width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

@@ -28,10 +28,11 @@
           <el-button class="btn" type="danger" plain>立即验证</el-button>
         </el-form-item>
       </el-form>
+      <div class="footer">
+        <el-button class="btn1" type="success" @click="returnAccountManage">确认修改</el-button>
+      </div>
     </div>
-    <div class="footer">
-      <el-button class="btn1" type="success" @click="returnAccountManage">确认修改</el-button>
-    </div>
+
   </div>
 </template>
 
@@ -54,7 +55,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -62,19 +63,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .btn {
@@ -91,5 +92,16 @@
     width: 100%;
     border: none;
     background-color: #66CCCC;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

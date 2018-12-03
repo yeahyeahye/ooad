@@ -15,26 +15,29 @@
         </el-dropdown>
       </div>
     </div>
-    <el-card>
-      <div slot="header">
-        <span>主题:{{$route.params[1].name}}</span>
-      </div>
-      <table style="width: 100%;text-align: center">
-        <tr style="line-height: 40px">
-          <td style="width: 30%">课次序号:</td>
-          <td>{{$route.params[0].id}}</td>
-        </tr>
-        <tr>
-          <td style="width: 30%">要求:</td>
-          <td style="text-align: left">{{$route.params[3].desc}}</td>
-        </tr>
-        <tr>
-          <td style="width: 30%">课程情况:</td>
-          <td><span style="color: red">暂停</span></td>
-        </tr>
-      </table>
-    </el-card>
-    <el-button type="success" class="btn" plain>继续讨论课</el-button>
+    <div class="main">
+      <el-card>
+        <div slot="header">
+          <span>主题:{{$route.params[1].name}}</span>
+        </div>
+        <table style="width: 100%;text-align: center">
+          <tr style="line-height: 40px">
+            <td style="width: 30%">课次序号:</td>
+            <td>{{$route.params[0].id}}</td>
+          </tr>
+          <tr>
+            <td style="width: 30%">要求:</td>
+            <td style="text-align: left">{{$route.params[3].desc}}</td>
+          </tr>
+          <tr>
+            <td style="width: 30%">课程情况:</td>
+            <td><span style="color: red">暂停</span></td>
+          </tr>
+        </table>
+      </el-card>
+      <el-button type="success" class="btn" plain>继续讨论课</el-button>
+    </div>
+
   </div>
 </template>
 
@@ -49,7 +52,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -57,38 +60,36 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
-
-  .empty {
-    width: 100%;
-    height: 60px;
-    text-align: right;
-    line-height: 60px;
-  }
-
   .btn {
     width: 100%;
     border: none;
-
     color: white;
     background-color: #66cccc;
     margin-top: 100px;
   }
 
   .main {
-    margin-top: 5px;
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

@@ -133,7 +133,7 @@
   }
 
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -141,17 +141,18 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .box-card {
     width: 100%;
+    margin-top: 10px;
   }
 
   .td0 {
@@ -161,14 +162,22 @@
 
   .btn {
     height: 36px;
-    width: 50%;
+    width: 100%;
     border: none;
     background-color: #66CCCC;
     margin: auto;
   }
 
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  .el-input-number__decrease {
+    background: aquamarine;
+  }
   @media (max-width: 640px) {
-    .btn {
+    .main {
       width: 100%;
       margin: auto;
     }

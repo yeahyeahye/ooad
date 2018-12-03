@@ -16,6 +16,7 @@
       </div>
     </div>
     <div class="main">
+      <div style="width:100%;height:25px"></div>
       <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
         <el-form-item label="姓名">
           <el-input v-model="formLabelAlign.name" :disabled="true"></el-input>
@@ -45,10 +46,11 @@
           </el-option>
         </el-select>
       </div>
+      <div class="footer">
+        <el-button class="btn" type="success" @click="returnHomePage">确认修改</el-button>
+      </div>
     </div>
-    <div class="footer">
-      <el-button class="btn" type="success" @click="returnHomePage">确认修改</el-button>
-    </div>
+
   </div>
 </template>
 
@@ -113,32 +115,26 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
-
-  .main {
-    margin-top: 25px;
-    width: 100%;
-  }
-
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .message {
@@ -162,5 +158,16 @@
     width: 100%;
     border: none;
     background-color: #66CCCC;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

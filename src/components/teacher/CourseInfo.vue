@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body0">
     <div id="head" class="head">
       <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>课程信息
         <el-dropdown class="plus" trigger="click">
@@ -16,14 +16,15 @@
         </el-dropdown>
       </div>
     </div>
+    <div class="empty" style="height: 10px;width: 100%"></div>
     <div class="main">
-      <el-card>
+      <el-card style="background-color: #ffffe9">
         <div slot="header">
           <span>课程要求</span>
         </div>
         <p>{{courseInfo.description}}</p>
       </el-card>
-      <el-card class="box-card">
+      <el-card class="box-card" style="background-color: #ffffe9">
         <span>成绩计算规则:</span>
         <br>
         <table
@@ -38,7 +39,7 @@
           </tr>
         </table>
       </el-card>
-      <el-card>
+      <el-card style="background-color: #ffffe9">
         <table
           style="width: 100%;text-align: center">
           <tr>
@@ -115,8 +116,12 @@
 </script>
 
 <style scoped>
+  .body0 {
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -124,19 +129,34 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
+  }
+
+  .btn {
+
   }
 
 </style>

@@ -80,19 +80,19 @@
 <style scoped>
 
   .head{
-    height: 50px;
+    height: 70px;
     width:100%;
     background-color: #CCFF99;
   }
   .title{
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
   .icon1{
     float:left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
   .table0{
     width:50%;

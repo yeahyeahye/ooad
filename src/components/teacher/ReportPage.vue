@@ -15,31 +15,34 @@
         </el-dropdown>
       </div>
     </div>
-    <el-card>
-      <table style="width: 100%"
-             v-for="(item,index) in reports"
-             :key="index">
-        <tr id="tr0">
-          <td style="width: 20%">{{item.groupId}}</td>
-          <td style="width: 55%;"><a href="#" style="text-decoration: none">{{item.reportUrl}}</a></td>
-          <td>
-            <el-input placeholder="成绩" v-model="item.result"></el-input>
-          </td>
-        </tr>
-      </table>
-    </el-card>
-    <div>
-      <el-button type="success" class="btn" plain
-                 style="margin-top: 20px"
-                 @click="downloadReport">批量下载
-      </el-button>
+    <div class="main">
+      <el-card>
+        <table style="width: 100%"
+               v-for="(item,index) in reports"
+               :key="index">
+          <tr id="tr0">
+            <td style="width: 20%">{{item.groupId}}</td>
+            <td style="width: 55%;"><a href="#" style="text-decoration: none">{{item.reportUrl}}</a></td>
+            <td>
+              <el-input placeholder="成绩" v-model="item.result"></el-input>
+            </td>
+          </tr>
+        </table>
+      </el-card>
+      <div>
+        <el-button type="success" class="btn" plain
+                   style="margin-top: 20px"
+                   @click="downloadReport">批量下载
+        </el-button>
+      </div>
+      <div>
+        <el-button type="success" class="btn" plain
+                   style="margin-top: 10px"
+                   @click="editResults">确认
+        </el-button>
+      </div>
     </div>
-    <div>
-      <el-button type="warning" class="btn" plain
-                 style="margin-top: 10px"
-                 @click="editResults">确认
-      </el-button>
-    </div>
+
   </div>
 </template>
 
@@ -95,7 +98,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -103,19 +106,19 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .btn {
@@ -123,5 +126,16 @@
     border: none;
     color: white;
     background-color: #66cccc;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>

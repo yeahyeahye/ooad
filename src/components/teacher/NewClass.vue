@@ -36,7 +36,7 @@
                 action="https://jsonplaceholder.typicode.com/posts/"
                 multiple>
                 <el-button size="mini" type="info">选择文件</el-button>
-                <div slot="tip" class="el-upload__tip" style="float: right">未选择任何文件</div>
+                <div slot="tip" class="el-upload__tip" style="float:right;margin-left: 5px">未选择任何文件</div>
               </el-upload>
             </td>
           </tr>
@@ -85,7 +85,7 @@
   }
 
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -93,36 +93,28 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
-
-  .box-card {
-    width: 100%;
-  }
-
-  .td0 {
-    width: 50%;
-    text-align: center;
-  }
-
   .btn {
     height: 36px;
-    width: 50%;
+    width: 100%;
     border: none;
     background-color: #66CCCC;
-    margin: auto;
   }
 
+  .main {
+    width: 50%;
+    margin: auto;
+  }
   @media (max-width: 640px) {
-    .btn {
+    .main {
       width: 100%;
-      margin: auto;
     }
   }
 </style>

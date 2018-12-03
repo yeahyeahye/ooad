@@ -52,7 +52,9 @@
     methods: {
       Login() {
 
-        this.$router.push({path: '/teacher/HomePage'});
+        this.$router.push({
+          path: '/teacher/HomePage',
+        });
 
       },
       FindPassword() {
@@ -66,7 +68,7 @@
 <style scoped>
 
   .login_head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -74,17 +76,17 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .table0 {
-    width: 50%;
+    width: 30%;
     margin: auto;
   }
 

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>我的课程
+      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>学生成绩
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu icon1"></i>
+          <i class="el-icon-menu"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
@@ -22,16 +22,16 @@
                    :key="index">
         <el-collapse-item>
           <template slot="title">
-            {{round.name}}<i class="header-icon el-icon-info"></i>
+            &nbsp;&nbsp;<i class="header-icon el-icon-service"></i>&nbsp;&nbsp;{{round.name}}
           </template>
           <el-col>
             <el-menu v-for="(item0,index) in round.groups"
                      :key="index"
                      default-active="2"
                      class="el-menu-vertical-demo"
-                     background-color="#545c64"
-                     text-color="#fff"
-                     active-text-color="#ffd04b">
+                     background-color="#cccccc"
+                     text-color="#66cccc"
+                     active-text-color="#339999">
               <el-submenu index="index">
                 <template slot="title">
                   <i class="el-icon-menu"></i>
@@ -189,7 +189,7 @@
 
 <style scoped>
   .head {
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: #CCFF99;
   }
@@ -197,36 +197,35 @@
   .title {
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .plus {
     float: right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .icon1 {
     float: left;
     margin-left: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .empty {
     width: 100%;
-    height: 30px;
+    height: 40px;
   }
 
-  .new_course {
-    height: 50px;
+  .main {
+    width: 50%;
+    margin: auto;
   }
 
-  .icon2 {
-    float: right;
-  }
-
-  .btn {
-    width: 100%;
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
 </style>
 

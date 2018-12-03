@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="empty"></div>
-      <div>
+      <div class="main">
         <el-row :gutter="12">
           <el-col :span="12">
             <el-card shadow="hover" class="card">
@@ -80,23 +80,28 @@
 
 <style scoped>
   .head{
-    height: 50px;
+    height: 70px;
     width:100%;
     background-color: #CCFF99;
   }
   .title{
     display: block;
     text-align: center;
-    line-height: 50px;
+    line-height: 70px;
   }
   .plus{
     float:right;
     margin-right: 3%;
-    line-height: 50px;
+    line-height: 70px;
   }
   .empty{
     width:100%;
     height:50px;
+  }
+
+  .main {
+    width: 50%;
+    margin: auto;
   }
   .card{
     height:100px;
@@ -105,6 +110,12 @@
 
     margin-top: 10px;
     background-color: #99CCCC;
+  }
+
+  @media (max-width: 640px) {
+    .main {
+      width: 100%;
+    }
   }
   .item {
     margin-top: 5px;
