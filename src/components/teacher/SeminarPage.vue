@@ -1,15 +1,15 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>OOAD
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnCourseManage"></i>OOAD
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-menu icon0"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>
-              <div @click="returnHomePage"><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</div>
+              <div @click="returnHomePage"><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -258,6 +258,10 @@
     float: right;
     margin-right: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .icon1 {

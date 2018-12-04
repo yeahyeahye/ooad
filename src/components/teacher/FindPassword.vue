@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-arrow-left icon1" @click="returnLogin"></i>找回密码</div>
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnLogin"></i>找回密码</div>
 
     </div>
     <div class="main">
@@ -62,6 +62,10 @@
     float:left;
     margin-left: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
   .table0{
     width: 100%;

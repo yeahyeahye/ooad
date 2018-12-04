@@ -1,16 +1,16 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>课程信息
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnCourseManage"></i>课程信息
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-menu icon0"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
-              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service icon0"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -18,13 +18,13 @@
     </div>
     <div class="empty" style="height: 10px;width: 100%"></div>
     <div class="main">
-      <el-card style="background-color: #ffffe9">
+      <el-card>
         <div slot="header">
           <span>课程要求</span>
         </div>
         <p>{{courseInfo.description}}</p>
       </el-card>
-      <el-card class="box-card" style="background-color: #ffffe9">
+      <el-card class="box-card">
         <span>成绩计算规则:</span>
         <br>
         <table
@@ -39,7 +39,7 @@
           </tr>
         </table>
       </el-card>
-      <el-card style="background-color: #ffffe9">
+      <el-card>
         <table
           style="width: 100%;text-align: center">
           <tr>
@@ -142,6 +142,10 @@
     float: left;
     margin-left: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .main {

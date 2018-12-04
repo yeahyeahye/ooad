@@ -29,27 +29,33 @@
         >
           <template slot="title">
             <div style="font-weight: bold">
-              &nbsp;&nbsp;<i class="header-icon el-icon-menu"></i>&nbsp;&nbsp;{{items.name}}
+              &nbsp;&nbsp;<i class="iconfont icon-kecheng"></i>&nbsp;&nbsp;{{items.name}}
             </div>
           </template>
           <div style="width: 100%">
             <div>
-              <el-button class="btn" type="info" plain @click="viewGrades">{{items.item[0]}}</el-button>
+              <el-button class="btn" type="info" plain @click="viewGrades"><i class="iconfont icon-chengjiguanli"></i>&nbsp;&nbsp;{{items.item[0]}}
+              </el-button>
             </div>
             <div>
-              <el-button class="btn" type="info" plain @click="viewGroups">{{items.item[1]}}</el-button>
+              <el-button class="btn" type="info" plain @click="viewGroups"><i class="iconfont icon-zudui"></i>&nbsp;&nbsp;{{items.item[1]}}
+              </el-button>
             </div>
             <div>
-              <el-button class="btn" type="info" plain @click="viewCourseInfo">{{items.item[2]}}</el-button>
+              <el-button class="btn" type="info" plain @click="viewCourseInfo"><i class="iconfont icon-xinxi1"></i>&nbsp;&nbsp;{{items.item[2]}}
+              </el-button>
             </div>
             <div>
-              <el-button class="btn" type="info" plain @click="viewClassInfo">{{items.item[3]}}</el-button>
+              <el-button class="btn" type="info" plain @click="viewClassInfo"><i class="iconfont icon-xinxi"></i>&nbsp;&nbsp;{{items.item[3]}}
+              </el-button>
             </div>
             <div>
-              <el-button class="btn" type="info" plain @click="gotoSeminar">{{items.item[4]}}</el-button>
+              <el-button class="btn" type="info" plain @click="gotoSeminar"><i class="iconfont icon-guanlianguize"></i>&nbsp;&nbsp;{{items.item[4]}}
+              </el-button>
             </div>
             <div>
-              <el-button class="btn" type="info" plain @click="setShare">{{items.item[5]}}</el-button>
+              <el-button class="btn" type="info" plain @click="setShare"><i class="el-icon-share"></i>&nbsp;&nbsp;{{items.item[5]}}
+              </el-button>
             </div>
           </div>
         </el-collapse-item>

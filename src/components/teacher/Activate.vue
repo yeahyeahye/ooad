@@ -1,7 +1,7 @@
 <template>
     <div id="activate">
       <div id="head" class="head">
-        <div class="title"><i class="el-icon-arrow-left icon1" @click="returnLogin"></i>课堂管理系统登录</div>
+        <div class="title"><i class="el-icon-back icon1 icon0" @click="returnLogin"></i>课堂管理系统登录</div>
 
       </div>
       <div class="main">
@@ -12,14 +12,14 @@
               <div class="bottom">
                 <el-tooltip class="item" effect="dark" content="可包含字母、数字、下划线，长度不少于6位" placement="bottom">
                   <el-input id="pass" type="password" placeholder="输入密码">
-                    <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword"></i>
+                    <i slot="suffix" class="el-input__icon el-icon-view icon2 icon0" @click="showPassword"></i>
                   </el-input>
                 </el-tooltip>
               </div>
             </td></tr>
             <tr><td class="td0">
               <el-input id="pass2" type="password" placeholder="确认密码">
-                <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword2"></i>
+                <i slot="suffix" class="el-input__icon el-icon-view icon2 icon0" @click="showPassword2"></i>
               </el-input>
             </td></tr>
             <tr><td class="td0">
@@ -93,6 +93,10 @@
     float:left;
     margin-left: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
   .table0{
     width:50%;

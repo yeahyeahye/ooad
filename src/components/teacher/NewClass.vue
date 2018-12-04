@@ -1,7 +1,7 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnClassInfo"></i>新建班级</div>
+      <div class="title"><i class="el-icon-close icon1 icon0" @click="returnClassInfo"></i>新建班级</div>
     </div>
     <div class="main">
       <el-card>
@@ -36,7 +36,7 @@
                 action="https://jsonplaceholder.typicode.com/posts/"
                 multiple>
                 <el-button size="mini" type="info">选择文件</el-button>
-                <div slot="tip" class="el-upload__tip" style="float:right;margin-left: 5px">未选择任何文件</div>
+                <div slot="tip" class="el-upload__tip" style="float:right;">未选择任何文件</div>
               </el-upload>
             </td>
           </tr>
@@ -100,6 +100,10 @@
     float: left;
     margin-left: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
   .btn {
     height: 36px;

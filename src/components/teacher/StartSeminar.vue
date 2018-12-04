@@ -1,13 +1,13 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnSeminarPage"></i>讨论课
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnSeminarPage"></i>讨论课
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-menu icon0"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -24,7 +24,7 @@
           v-for="(item,index) in groups"
           :key="index">
           <el-menu-item index="index" @click="updateGrade">
-            <i class="el-icon-document"></i>
+            <i class="el-icon-document icon0"></i>
             <span slot="title">{{item.id}}</span>
           </el-menu-item>
 
@@ -41,7 +41,7 @@
           v-for="(item,index) in quesGroups"
           :key="index">
           <el-menu-item index="index" @click="updateQuesGrade">
-            <i class="el-icon-document"></i>
+            <i class="el-icon-document icon0"></i>
             <span slot="title">{{item}}</span>
           </el-menu-item>
 
@@ -59,7 +59,7 @@
       </el-card>
 
       <el-card class="pause" id="pause">
-        <i class="el-icon-warning" style="color: red;font-size: 20px"></i>
+        <i class="el-icon-warning icon0" style="color: red;font-size: 20px"></i>
         <br>
         <br>确认暂停
         <br>{{seminar[0].course}} &nbsp;{{date}}
@@ -77,7 +77,7 @@
         <el-button type="text" style="float:right;margin-right: 5px" @click="cancelPasue">CANCEL</el-button>
       </el-card>
       <el-card class="finish" id="finished">
-        <i class="el-icon-warning" style="color: red;font-size: 20px"></i>
+        <i class="el-icon-warning icon0" style="color: red;font-size: 20px"></i>
         <br>
         <br>讨论课已结束
         <br>请设定书面报告截止日期
@@ -123,7 +123,7 @@
           修改提问成绩
         </el-button>
         <el-button size="mini"
-                   icon="el-icon-caret-right" circle
+                   icon="el-icon-caret-right icon0" circle
                    style="float: right;margin-top: 5px;margin-bottom: 10px;background-color: #f8e9e9;border-color:#ff9999;color:#ff6666"
                    @click="isSuspend"></el-button>
       </el-card>
@@ -403,6 +403,10 @@
     float: right;
     margin-right: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .icon1 {

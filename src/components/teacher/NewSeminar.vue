@@ -1,7 +1,7 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>新建讨论课</div>
+      <div class="title"><i class="el-icon-close icon1 icon0" @click="returnSeminarPage"></i>新建讨论课</div>
     </div>
     <div class="main">
       <el-card class="box-card">
@@ -10,7 +10,7 @@
             <td style="width: 28%">主题</td>
             <td>
               <el-input v-model="name">
-                <i slot="suffix" class="el-input__icon el-icon-edit"></i>
+                <i slot="suffix" class="el-input__icon el-icon-edit icon0"></i>
               </el-input>
             </td>
           </tr>
@@ -46,7 +46,7 @@
       <el-collapse accordion>
         <el-collapse-item>
           <template slot="title">
-            &nbsp;&nbsp;<i class="header-icon el-icon-info"></i>&nbsp;&nbsp;2016--1
+            &nbsp;&nbsp;<i class="header-icon el-icon-info icon0"></i>&nbsp;&nbsp;2016--1
           </template>
           <el-card class="box-card">
             <table
@@ -176,6 +176,10 @@
     display: block;
     text-align: center;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .icon1 {

@@ -1,15 +1,15 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnHomePage"></i>账户与设置
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnHomePage"></i>账户与设置
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-plus"></i>
+          <i class="el-icon-plus icon0"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>
-              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service icon0"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -26,12 +26,12 @@
         </el-form-item>
         <el-form-item label="联系方式">
           <el-input v-model="formLabelAlign.email">
-            <i slot="suffix" class="el-input__icon el-icon-edit" @click="editEmail"></i>
+            <i slot="suffix" class="el-input__icon el-icon-edit icon0" @click="editEmail"></i>
           </el-input>
         </el-form-item>
         <el-form-item label="账户密码">
           <el-input v-model="formLabelAlign.password" type="password" id="pass">
-            <i slot="suffix" class="el-input__icon el-icon-edit" @click="editPassword"></i>
+            <i slot="suffix" class="el-input__icon el-icon-edit icon0" @click="editPassword"></i>
           </el-input>
         </el-form-item>
       </el-form>
@@ -131,6 +131,9 @@
     line-height: 70px;
   }
 
+  .icon0 {
+    font-weight: bolder;
+  }
   .plus {
     float: right;
     margin-right: 3%;

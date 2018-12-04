@@ -1,15 +1,15 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnAccountManage"></i>修改密码
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnAccountManage"></i>修改密码
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-plus"></i>
+          <i class="el-icon-plus icon0"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>
-              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service icon0"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -26,7 +26,7 @@
           <td class="td0">
             <el-tooltip class="item" effect="dark" content="可包含字母、数字、下划线，长度不少于6位" placement="bottom">
               <el-input id="pass" type="password" placeholder="新密码">
-                <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword"></i>
+                <i slot="suffix" class="el-input__icon el-icon-view icon2 icon0" @click="showPassword"></i>
               </el-input>
             </el-tooltip>
           </td>
@@ -34,7 +34,7 @@
         <tr>
           <td class="td0">
             <el-input id="pass2" type="password" placeholder="确认密码">
-              <i slot="suffix" class="el-input__icon el-icon-view icon2" @click="showPassword2"></i>
+              <i slot="suffix" class="el-input__icon el-icon-view icon2 icon0" @click="showPassword2"></i>
             </el-input>
           </td>
         </tr>
@@ -121,6 +121,10 @@
     float: right;
     margin-right: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .table0 {

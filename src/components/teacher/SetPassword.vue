@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-arrow-left icon1" @click="returnFindPassword"></i>密码设置</div>
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnFindPassword"></i>密码设置</div>
 
     </div>
     <div class="main">
@@ -88,6 +88,10 @@
     border: none;
     background-color: #66CCCC;
     margin: auto;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .main {

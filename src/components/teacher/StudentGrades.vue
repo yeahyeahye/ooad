@@ -1,16 +1,16 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>学生成绩
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnCourseManage"></i>学生成绩
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-menu icon0"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
-              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service icon0"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -22,19 +22,19 @@
                    :key="index">
         <el-collapse-item style="color: gainsboro">
           <template slot="title">
-            &nbsp;&nbsp;<i class="header-icon el-icon-service"></i>&nbsp;&nbsp;{{round.name}}
+            &nbsp;&nbsp;<i class="header-icon el-icon-service icon0"></i>&nbsp;&nbsp;{{round.name}}
           </template>
           <el-col>
             <el-menu v-for="(item0,index) in round.groups"
                      :key="index"
                      default-active="2"
-                     class="el-menu-vertical-demo"
+                     class="el-menu-vertical-demo icon0"
                      background-color="gainsboro"
                      text-color="#66cccc"
                      active-text-color="#339999">
               <el-submenu index="index">
                 <template slot="title">
-                  <i class="el-icon-menu"></i>
+                  <i class="el-icon-menu icon0"></i>
                   <span>{{item0.groupId}}</span>
                 </template>
                 <el-menu-item-group v-for="(item1,index1) in item0.item"
@@ -204,6 +204,10 @@
     float: right;
     margin-right: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .icon1 {

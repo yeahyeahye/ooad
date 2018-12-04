@@ -1,14 +1,14 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnSeminarPage"></i>轮次设置</div>
+      <div class="title"><i class="el-icon-close icon1 icon0" @click="returnSeminarPage"></i>轮次设置</div>
     </div>
     <div class="main">
       <el-card class="box-card">
         <div slot="header">
           <span>讨论课:</span>
           <el-button type="success" size="small" plain style="float: right" @click="addSeminar"><i
-            class="el-icon-plus"></i>&nbsp;添加讨论课
+            class="el-icon-plus icon0"></i>&nbsp;添加讨论课
           </el-button>
         </div>
         <table
@@ -182,6 +182,10 @@
     border: none;
     background-color: #66CCCC;
     margin: auto;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .main {

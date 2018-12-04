@@ -1,13 +1,13 @@
 <template>
     <div>
       <div id="head" class="head">
-        <div class="title"><i class="iconfont icon-yonghu"></i><span style="float: left">{{username}}</span>
+        <div class="title"><i class="iconfont icon-yonghu icon0"></i><span style="float: left">{{username}}</span>
           <el-dropdown class="plus" trigger="click">
-            <i class="el-icon-plus icon1" style="font:25px bolder"></i>
+            <i class="el-icon-plus icon1 icon0" style="font:25px bolder"></i>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+              <el-dropdown-item><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
               <el-dropdown-item>
-                <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+                <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -19,7 +19,7 @@
           <el-col :span="12">
             <el-card shadow="hover" class="card">
               <div @click="gotoCourseManage" class="card1">
-                <i class="el-icon-menu"></i>
+                <i class="iconfont icon-kecheng icon0"></i>
                 我的课程
               </div>
             </el-card>
@@ -27,7 +27,7 @@
           <el-col :span="12">
             <el-card shadow="hover" class="card">
               <div @click="gotoSeminar" class="card1">
-                <i class="el-icon-service"></i>
+                <i class="el-icon-service icon0"></i>
                 讨论课
               </div>
             </el-card>
@@ -37,7 +37,7 @@
           <el-col :span="12">
             <el-card shadow="hover" class="card">
               <el-badge is-dot class="item">
-              <i class="el-icon-date"></i>
+                <i class="el-icon-date icon0"></i>
               </el-badge>
               我的待办
             </el-card>
@@ -45,7 +45,7 @@
           <el-col :span="12" >
             <el-card shadow="hover" class="card">
               <div @click="SetAccount">
-                <i class="el-icon-setting"></i>
+                <i class="el-icon-setting icon0"></i>
                 账户设置
               </div>
 
@@ -114,6 +114,9 @@
     line-height: 70px;
   }
 
+  .icon0 {
+    font-weight: bolder;
+  }
   .icon-yonghu {
     float: left;
     font-size: 25px;

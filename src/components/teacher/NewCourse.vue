@@ -1,7 +1,7 @@
 <template>
   <div class="body0">
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-close icon1" @click="returnCourseManage"></i>新建课程</div>
+      <div class="title"><i class="el-icon-close icon1 icon0" @click="returnCourseManage"></i>新建课程</div>
     </div>
     <div class="main">
       <el-card class="box-card">
@@ -10,7 +10,7 @@
             <td style="width: 28%">课程名称</td>
             <td>
               <el-input v-model="course.name">
-                <i slot="suffix" class="el-input__icon el-icon-edit"></i>
+                <i slot="suffix" class="el-input__icon el-icon-edit icon0"></i>
               </el-input>
             </td>
           </tr>
@@ -144,6 +144,9 @@
     line-height: 70px;
   }
 
+  .icon0 {
+    font-weight: bolder;
+  }
   .icon1 {
     float: left;
     margin-left: 3%;

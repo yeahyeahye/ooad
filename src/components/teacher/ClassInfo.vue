@@ -1,16 +1,16 @@
 <template>
   <div>
     <div id="head" class="head">
-      <div class="title"><i class="el-icon-back icon1" @click="returnCourseManage"></i>班级信息
+      <div class="title"><i class="el-icon-back icon1 icon0" @click="returnCourseManage"></i>班级信息
         <el-dropdown class="plus" trigger="click">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-menu icon0"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><i class="el-icon-bell"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
+            <el-dropdown-item><i class="el-icon-bell icon0"></i>&nbsp;&nbsp;个人页</el-dropdown-item>
             <el-dropdown-item>
-              <div @click="gotoSeminar"><i class="el-icon-service"></i>&nbsp;&nbsp;讨论课</div>
+              <div @click="gotoSeminar"><i class="el-icon-service icon0"></i>&nbsp;&nbsp;讨论课</div>
             </el-dropdown-item>
             <el-dropdown-item>
-              <div @click="returnLogin"><i class="el-icon-back"></i>&nbsp;&nbsp;退 出</div>
+              <div @click="returnLogin"><i class="el-icon-back icon0"></i>&nbsp;&nbsp;退 出</div>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -21,13 +21,13 @@
         <el-button type="success" plain
                    style="width: 100%"
                    @click="addClass">
-          <i class="el-icon-plus"></i>&nbsp;新增班级
+          <i class="el-icon-plus icon0"></i>&nbsp;新增班级
         </el-button>
       </div>
       <div style="width: 100%"
            v-for="(item,index) in classInfo"
            :key="index">
-        <el-card style="background-color: aliceblue">
+        <el-card>
           <div slot="header">
             <span>{{item.classId}}</span>
           </div>
@@ -163,6 +163,10 @@
     float: left;
     margin-left: 3%;
     line-height: 70px;
+  }
+
+  .icon0 {
+    font-weight: bolder;
   }
 
   .main {
